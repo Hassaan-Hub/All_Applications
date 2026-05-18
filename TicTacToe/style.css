@@ -36,10 +36,6 @@ body {
     flex-wrap: wrap;
 }
 
-.hideMain{
-    display: none;
-}
-
 .game {
     width: var(--game--vmin);
     height: var(--game--vmin);

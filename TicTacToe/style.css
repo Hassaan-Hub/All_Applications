@@ -36,6 +36,7 @@ body {
     flex-wrap: wrap;
 }
 
+
 .game {
     width: var(--game--vmin);
     height: var(--game--vmin);

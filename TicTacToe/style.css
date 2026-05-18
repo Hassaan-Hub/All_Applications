@@ -36,6 +36,9 @@ body {
     flex-wrap: wrap;
 }
 
+.hideMain{
+    display: none;
+}
 
 .game {
     width: var(--game--vmin);
@@ -67,7 +70,7 @@ body {
     padding: var(--space--vmin);
     border-radius: var(--space--vmin);
     border: none;
-    transition: all ease 1s;
+    transition: all ease 0.5s;
 }
 
 #new-game {
@@ -75,7 +78,7 @@ body {
     padding: var(--space--vmin);
     border-radius: var(--space--vmin);
     border: none;
-    transition: all ease 1s;
+    transition: all ease 0.5s;
 }
 
 #reset-game:hover,

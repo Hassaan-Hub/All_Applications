@@ -1,5 +1,9 @@
 let boxes = document.querySelectorAll(".box");
 let resetBtn = document.getElementById("reset-game");
+let msgContainer = document.querySelector(".msg-container");
+let msg = document.querySelector(".msg")
+let newGameBtn = document.querySelector("#new-game")
+
 
 let turn = true;
 
@@ -16,6 +20,7 @@ let winPattern = [
 ]
 
 const resetGame = ()=>{
+    msgContainer.classList.add("hide")
     enableBoxes();
 }
 
@@ -54,6 +59,7 @@ const disabledBoxes = () => {
 
 
 const showWinner = (winner)=>{
+    msgContainer.classList.remove("hide");
     disabledBoxes();
 }
 
@@ -66,20 +72,29 @@ const checkWinner = () => {
 
         if (postVal1 !== "" && postVal2 !== "" && postVal3 !== "") {
             if (postVal1 === postVal2 && postVal2 === postVal3) {
-                console.log("winner", postVal1);
+                msg.innerText = `winner ${postVal1}`
                 showWinner(postVal1)
             }
         }
     }
 
-    // let drew = true;
-    // for (let box of boxes) {
-    //     if (box.innerText == "") {
-    //         drew = false
-    //         break;
-    //     }
-    // }
+    let drew = true;
+    for (let box of boxes) {
+        if (box.innerText === "") {
+            drew = false
+            break;
+        }
+    }
+    if(drew){
+        Swal.fire({
+            title: "It's a Draw!",
+            text: "The game ended in a draw",
+            icon: "info"
+        });
+        resetGame()
+    }
 }
 
 
-resetBtn.addEventListener("click", resetGame)
+resetBtn.addEventListener("click", resetGame);
+newGameBtn.addEventListener("click", resetGame);

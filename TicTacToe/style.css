@@ -16,7 +16,9 @@
     --space--vmin: 2vmin;
 
 
-    --font--xl: 24px;
+    --font--2xl: 24px;
+    --font--3xl: 30px;
+    --font--4xl: 40px;
 
 
 }
@@ -53,7 +55,7 @@ body {
     height: var(--box--vmin);
     border-radius: var(--space--vmin);
     border: none;
-    font-size: var(--font--xl);
+    font-size: var(--font--4xl);
     background: var(--bgBox--primery);
 }
 

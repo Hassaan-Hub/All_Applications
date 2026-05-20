@@ -6,29 +6,90 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+
+:root{
+    /* colors */
+    --bg--primery: #081b31;
+
+    /* spaces */
+    --space1--clamp: clamp(90px, 20vw, 105px);
+    --space2--clamp: clamp(85px, 18vw, 100px);
+    --gap--clamp: clamp(1.2rem, 3vw, 4rem);
+    --margin--clamp: clamp(1rem, 5vw, 3rem);
+    
+    /* box-shadow */
+    --box-shadow--primery: 0px 0px 10px 0px rgba(0, 0, 0, 0.705);
+
+    /* font-size */
+    --font-size--2xl: clamp(1.2rem, 4vw, 2rem);
+    --font-size--xl: clamp(1rem, 1.5vw, 2rem);
+    --font-bold--xl: 900;
+
+}
+
+
 h1{
-    background-color: #081b31;
+    background-color: var(--bg--primery);
+    font-weight: var(--font-bold--xl);
     height: auto;
     min-height: 4rem;
     line-height: 1.2rem;
     padding: 1rem;
     color: #fff;
-    font-size: clamp(1.2rem, 4vw, 2rem);
+    font-size: var(--font-size--2xl);
 }
 
 
 .choices{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: var(--margin--clamp);
+    gap: clamp(1rem, 1.2vw, 2rem);
 }
 
 
 .choice{
-    width: clamp(100px 20vw 165px);
-    height: clamp(100px 20vw 165px);
+    height: var(--space1--clamp);
+    width: var(--space1--clamp);
+    background-color: var(--bg--primery);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.choice:hover{
+    box-shadow: var(--box-shadow--primery);
+    transition: all ease 0.5s;
+    cursor: pointer;
+    background-color: #0a2c4d;
+}
+
+
+
 img{
-    width: clamp(85px 18vw 165px);
-    height: clamp(85px 18vw 165px);
-    
+    height: var(--space2--clamp);
+    width: var(--space2--clamp);
+    border-radius: 50%;
+}
+
+
+.score-board{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap--clamp);
+    font-size: var(--font-size--xl);
+}
+
+
+.msg-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--margin--clamp);
+    font-size: var(--font-size--xl);
+    font-weight: var(--font-bold--xl);
 }

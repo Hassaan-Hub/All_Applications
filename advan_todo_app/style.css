@@ -8,7 +8,10 @@
     /* colors */
     --background--primery: #2136d685;
     --text--primery: #fff;
-
+    
+    /* width */
+    --space--width: clamp(100px, 200px, 300px);
+    
     /* spaces */
     --space--l: clamp(1rem, 1.2vw, 2rem);
     --space--xl: clamp(1.2rem, 1.5rem, 3rem);
@@ -20,5 +23,21 @@
     color: var(--text--primery);
     margin: var(--space--xl);
     padding: var(--space--l);
-    width: clamp(100px, 200px, 300px);
+    width: var(--space--width);
+    border-radius: var(--space--l);
+}
+
+
+#container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul{
+    background-color: var(--background--primery);
+    margin: var(--space--xl);
+    padding: var(--space--xl);
+    width: var(--space--width);
+    border-radius: var(--space--l);
+    list-style: none;
 }
